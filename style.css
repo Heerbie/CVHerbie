@@ -1,5 +1,4 @@
 /* Reset margin dan padding untuk keseragaman */
-
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +6,6 @@
 }
 
 /* Body styling dengan gambar background */
-
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #eee;
@@ -21,7 +19,6 @@ body {
 }
 
 /* Overlay transparan pada body untuk mengurangi kecerahan gambar */
-
 body::before {
   content: "";
   position: absolute;
@@ -34,7 +31,6 @@ body::before {
 }
 
 /* Header styling */
-
 header {
   background-color: rgba(26, 26, 26, 0.8);
   padding: 60px 0;
@@ -42,17 +38,10 @@ header {
   color: white;
   box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.6);
   border-radius: 0 0 15px 15px;
-  animation: fadeInDown 1.2s ease-in-out;
-}
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 20px;
+  animation: fadeInDown 2s ease-in-out;  /* Durasi animasi lebih panjang */
 }
 
 /* Animasi header */
-
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -65,7 +54,6 @@ header {
 }
 
 /* Profile Section */
-
 .profile {
   display: flex;
   justify-content: center;
@@ -76,6 +64,7 @@ header {
   animation: fadeIn 1.5s ease-in-out;
 }
 
+/* Animasi fade-in */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -85,6 +74,7 @@ header {
   }
 }
 
+/* Profil gambar */
 .profile-image {
   width: 180px;
   height: 180px;
@@ -94,8 +84,10 @@ header {
   border: 6px solid #444;
   box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease;
+  will-change: transform, opacity;  /* Optimasi performa */
 }
 
+/* Hover effect untuk gambar profil */
 .profile-image:hover {
   transform: scale(1.1) rotate(10deg);
 }
@@ -106,12 +98,14 @@ header {
   object-fit: cover;
 }
 
+/* Profile info */
 .profile-info {
   text-align: left;
   max-width: 650px;
   animation: slideInLeft 1.2s ease-out;
 }
 
+/* Animasi slide-in */
 @keyframes slideInLeft {
   from {
     opacity: 0;
@@ -123,16 +117,17 @@ header {
   }
 }
 
+/* Nama */
 .profile-info h1 {
-  font-size: 2.8em;
+  font-size: 3.2em;
   margin-bottom: 15px;
   color: #d500f9;
   animation: pulse 1.5s infinite;
 }
 
+/* Animasi pulse untuk nama */
 @keyframes pulse {
-  0%,
-  100% {
+  0%, 100% {
     text-shadow: 0 0 10px #f9cb00, 0 0 20px #f9cb00;
   }
   50% {
@@ -148,7 +143,7 @@ header {
 
 .contact-info p {
   font-size: 1.2em;
-  color: #ddd;
+  color: #bbb;
 }
 
 .contact-info i {
@@ -157,7 +152,6 @@ header {
 }
 
 /* Menu styling */
-
 nav {
   background-color: rgba(34, 34, 34, 0.9);
   text-align: center;
@@ -167,6 +161,7 @@ nav {
   animation: fadeIn 1.5s ease-in-out;
 }
 
+/* Animasi menu */
 nav ul {
   list-style-type: none;
 }
@@ -212,7 +207,6 @@ nav ul li a:hover i {
 }
 
 /* Section styling */
-
 .section {
   margin-bottom: 50px;
   background-color: rgba(51, 51, 51, 0.8);
@@ -222,6 +216,7 @@ nav ul li a:hover i {
   animation: fadeInUp 1s ease-in-out;
 }
 
+/* Animasi fadeInUp */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -262,7 +257,6 @@ nav ul li a:hover i {
 }
 
 /* Instagram link styling */
-
 .instagram {
   text-align: center;
   margin-top: 50px;
@@ -280,9 +274,9 @@ nav ul li a:hover i {
   animation: heartbeat 2s infinite;
 }
 
+/* Animasi heartbeat untuk Instagram link */
 @keyframes heartbeat {
-  0%,
-  100% {
+  0%, 100% {
     transform: scale(1);
   }
   50% {
@@ -300,7 +294,6 @@ nav ul li a:hover i {
 }
 
 /* Responsivitas */
-
 @media (max-width: 768px) {
   .profile {
     flex-direction: column;
@@ -316,14 +309,5 @@ nav ul li a:hover i {
   }
   .container {
     padding: 10px;
-  }
-  .profile-info h1 {
-    font-size: 2.4em;
-  }
-  .profile-info p.job-title {
-    font-size: 1.3em;
-  }
-  .contact-info p {
-    font-size: 1.1em;
   }
 }
